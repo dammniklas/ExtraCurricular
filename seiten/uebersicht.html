@@ -1,17 +1,190 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="de">
-    
-<header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie – 4 Boxen pro Reihe</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.4;
+      background: #f7f7f8;
+      color: #111;
+    }
 
-</header>
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e6e6e8;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 12px 16px 8px;
+      color: #222;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 16px 20px;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: #333;
+    }
+
+
+ .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    width: auto; /* nicht mehr volle Breite */
+    align-self: center; /* Button zentriert horizontal */
+    transition: transform 0.05s ease, opacity 0.2s ease;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn:active { transform: translateY(1px); }
+
+  .card .actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: center; /* sorgt für mittige Ausrichtung */
+  }
+
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 <body>
+  <main class="page">
+    <h1>Galerie</h1>
+      
+    <section class="grid">
+      <article class="card">
+        <h3>Mathematik</h3>
+        <img src="https://picsum.photos/id/1015/800/450" alt="Beispielbild 1">
+        <div class="card-content">
+          <p>Ein Blick auf eine malerische Berglandschaft bei Sonnenuntergang.</p>
+          <div class="actions">
+            <a class="btn" href="Mathematik.html">Weiter</a>
+          </div>
+        </div>
+      </article>
 
-</body>
+      <article class="card">
+        <h3>Hund im Park</h3>
+        <img src="https://picsum.photos/id/1025/800/450" alt="Beispielbild 2">
+        <div class="card-content">
+          <p>Ein verspielter Hund genießt den sonnigen Nachmittag im Park.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
 
-<footer>
+      <article class="card">
+        <h3>Wüstenlandschaft</h3>
+        <img src="https://picsum.photos/id/1035/800/450" alt="Beispielbild 3">
+        <div class="card-content">
+          <p>Sanddünen soweit das Auge reicht – eine endlose Weite in der Wüste.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
 
-</footer>
+      <article class="card">
+        <h3>Waldpfad</h3>
+        <img src="https://picsum.photos/id/1045/800/450" alt="Beispielbild 4">
+        <div class="card-content">
+          <p>Ein ruhiger Weg durch den Wald – perfekt für einen Spaziergang.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
 
-</html>
+       <article class="card">
+    <h3>Blumenwiese</h3>
+    <img src="https://picsum.photos/id/1095/800/450" alt="Beispielbild 9">
+    <div class="card-content">
+      <p>Eine bunte Blumenwiese mit Schmetterlingen im Sommer.</p>
+      <div class="actions">
+        <a class="btn" href="seite-4.html">Weiter</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Schneelandschaft</h3>
+    <img src="https://picsum.photos/id/1105/800/450" alt="Beispielbild 10">
+    <div class="card-content">
+      <p>Verschneite Bäume und ein klarer Winterhimmel.</p>
+      <div class="actions">
+        <a class="btn" href="seite-4.html">Weiter</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Gebirgssee</h3>
+    <img src="https://picsum.photos/id/1115/800/450" alt="Beispielbild 11">
+    <div class="card-content">
+      <p>Ein stiller See eingebettet zwischen hohen Gipfeln.</p>
+      <div class="actions">
+        <a class="btn" href="seite-4.html">Weiter</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Stadtpark</h3>
+    <img src="https://picsum.photos/id/1125/800/450" alt="Beispielbild 12">
+    <div class="card-content">
+      <p>Menschen entspannen auf einer Bank im sonnigen Stadtpark.</p>
+      <div class="actions">
+        <a class="btn" href="seite-4.html">Weiter</a>
+      </div>
+    </div>
+  </article>
