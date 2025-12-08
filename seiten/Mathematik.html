@@ -1,17 +1,187 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="de">
-    
-<header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerie – 4 Boxen pro Reihe</title>
+  <style>
+    /* Seite soll scrollbar sein, sobald Inhalt höher als der Viewport ist */
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.4;
+      background: #f7f7f8;
+      color: #111;
+    }
 
-</header>
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
 
+    /* 4 Spalten pro Reihe */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    /* Box/ Karte */
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e6e6e8;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 280px; /* sorgt dafür, dass der Button unten Platz findet */
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;  /* gleichmäßige Bildhöhe */
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 12px 16px;
+      gap: 8px;
+      height: 100%;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Button bleibt am unteren Rand der Box */
+    .card .actions {
+      margin-top: auto; /* drückt die Actions nach unten */
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      width: 100%; /* volle Breite in der Box */
+      transition: transform 0.05s ease, opacity 0.2s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn:active { transform: translateY(1px); }
+
+    /* Optional: kleine Responsive-Anpassung, falls Viewport sehr schmal ist */
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 <body>
+  <main class="page">
+    <h1>Galerie</h1>
 
+    <!-- Pro Reihe 4 Boxen (hier Beispiel mit 2 Reihen = 8 Boxen) -->
+    <section class="grid">
+      <!-- Box 1 -->
+      <article class="card">
+        <img src="https://picsum.photos/id/1015/800/450" alt="Beispielbild 1">
+        <div class="card-content">
+          <p>Kleiner Text zum Bild – kurze Beschreibung oder Caption.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Box 2 -->
+      <article class="card">
+        <img src="https://picsum.photos/id/1025/800/450" alt="Beispielbild 2">
+        <div class="card-content">
+          <p>Noch ein kurzer Beschreibungstext für dieses Bild.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Box 3 -->
+      <article class="card">
+        <img src="https://picsum.photos/id/1035/800/450" alt="Beispielbild 3">
+        <div class="card-content">
+          <p>Kurze Info zum Motiv – max. ein bis zwei Zeilen.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Box 4 -->
+      <article class="card">
+        <img src="https://picsum.photos/id/1045/800/450" alt="Beispielbild 4">
+        <div class="card-content">
+          <p>Erläuterungstext unter dem Bild in kleiner Schrift.</p>
+          <div class="actions">
+            <a class="btn" href="seite-2.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Zweite Reihe (optional) -->
+      <article class="card">
+        <img src="https://picsum.photos/id/1055/800/450" alt="Beispielbild 5">
+        <div class="card-content">
+          <p>Weitere Box – Aufbau identisch zu den anderen.</p>
+          <div class="actions">
+            <a class="btn" href="seite-3.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/id/1065/800/450" alt="Beispielbild 6">
+        <div class="card-content">
+          <p>Kurze Bildbeschreibung mit wenig Text.</p>
+          <div class="actions">
+            <a class="btn" href="seite-3.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/id/1075/800/450" alt="Beispielbild 7">
+        <div class="card-content">
+          <p>Alle vier Boxen pro Reihe sind identisch aufgebaut.</p>
+          <div class="actions">
+            <a class="btn" href="seite-3.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://picsum.photos/id/1085/800/450" alt="Beispielbild 8">
+        <div class="card-content">
+          <p>Button bleibt am unteren Rand der Box.</p>
+          <div class="actions">
+            <a class="btn" href="seite-3.html">Weiter</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
-
-<footer>
-
-</footer>
-
 </html>
